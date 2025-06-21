@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useLazyGetAssetByIdQuery = exports.useGetAssetByIdQuery = exports.useGetAssetsQuery = exports.assetsApi = void 0;
+exports.useGetCoinMarketChartQuery = exports.useLazyGetAssetByIdQuery = exports.useGetAssetByIdQuery = exports.useGetAssetsQuery = exports.assetsApi = void 0;
 const api_1 = require("../store/api");
 exports.assetsApi = api_1.api.injectEndpoints({
     endpoints: (builder) => ({
@@ -28,8 +28,20 @@ exports.assetsApi = api_1.api.injectEndpoints({
             transformResponse: (response) => response[0],
             providesTags: (result, error, id) => [{ type: "Assets", id }],
         }),
+        getCoinMarketChart: builder.query({
+            query: ({ id, vs_currency, days, interval, precision }) => ({
+                url: `coins/${id}/market_chart`,
+                params: {
+                    vs_currency,
+                    days,
+                    interval,
+                    precision,
+                },
+            }),
+            providesTags: ["CoinMarketChart"],
+        }),
     }),
     overrideExisting: false,
 });
 // this endpoint does not return total elements or current pages , like normal paginated endpoints
-exports.useGetAssetsQuery = exports.assetsApi.useGetAssetsQuery, exports.useGetAssetByIdQuery = exports.assetsApi.useGetAssetByIdQuery, exports.useLazyGetAssetByIdQuery = exports.assetsApi.useLazyGetAssetByIdQuery;
+exports.useGetAssetsQuery = exports.assetsApi.useGetAssetsQuery, exports.useGetAssetByIdQuery = exports.assetsApi.useGetAssetByIdQuery, exports.useLazyGetAssetByIdQuery = exports.assetsApi.useLazyGetAssetByIdQuery, exports.useGetCoinMarketChartQuery = exports.assetsApi.useGetCoinMarketChartQuery;

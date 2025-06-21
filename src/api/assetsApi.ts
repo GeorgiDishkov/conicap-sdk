@@ -42,6 +42,31 @@ export const assetsApi = api.injectEndpoints({
       transformResponse: (response: CoinMarketResponse[]) => response[0],
       providesTags: (result, error, id) => [{ type: "Assets", id }],
     }),
+    getCoinMarketChart: builder.query<
+      {
+        prices: [number, number][];
+        market_caps: [number, number][];
+        total_volumes: [number, number][];
+      },
+      {
+        id: string;
+        vs_currency: string;
+        days: string | number;
+        interval?: "5m" | "hourly" | "daily";
+        precision?: string;
+      }
+    >({
+      query: ({ id, vs_currency, days, interval, precision }) => ({
+        url: `coins/${id}/market_chart`,
+        params: {
+          vs_currency,
+          days,
+          interval,
+          precision,
+        },
+      }),
+      providesTags: ["CoinMarketChart"],
+    }),
   }),
 
   overrideExisting: false,
@@ -53,4 +78,5 @@ export const {
   useGetAssetsQuery,
   useGetAssetByIdQuery,
   useLazyGetAssetByIdQuery,
+  useGetCoinMarketChartQuery,
 } = assetsApi;
