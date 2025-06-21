@@ -1,1 +1,1 @@
-export const apiTags = ["Assets"];
+export const apiTags = ["Assets", "CoinMarketChart"];
