@@ -31,8 +31,26 @@ export const assetsApi = api.injectEndpoints({
       }),
       providesTags: ["Assets"],
     }),
+    getAssetById: builder.query<CoinMarketResponse, string>({
+      query: (id: string) => ({
+        url: `coins/markets`,
+        params: {
+          vs_currency: "usd",
+          ids: id,
+        },
+      }),
+      transformResponse: (response: CoinMarketResponse[]) => response[0],
+      providesTags: (result, error, id) => [{ type: "Assets", id }],
+    }),
   }),
+
   overrideExisting: false,
 });
 
-export const { useGetAssetsQuery } = assetsApi;
+// this endpoint does not return total elements or current pages , like normal paginated endpoints
+
+export const {
+  useGetAssetsQuery,
+  useGetAssetByIdQuery,
+  useLazyGetAssetByIdQuery,
+} = assetsApi;
