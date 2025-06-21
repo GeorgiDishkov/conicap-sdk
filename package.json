@@ -1,5 +1,5 @@
 {
-  "name": "@georgi/coincap-sdk",
+  "name": "coincap-sdk",
   "version": "1.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
