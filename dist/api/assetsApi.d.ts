@@ -1,8 +1,12 @@
-import { AssetsResponse } from "../types/interfaces";
+import { CoinMarketResponse } from "../types/interfaces";
 export declare const assetsApi: import("@reduxjs/toolkit/query").Api<import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, {
     getAssets: import("@reduxjs/toolkit/query").QueryDefinition<{
-        limit?: number;
-    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>;
+        vs_currency?: string;
+        order?: string;
+        per_page?: number;
+        page?: number;
+        sparkline?: boolean;
+    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>;
 }, "restAPI", string, typeof import("@reduxjs/toolkit/query").coreModuleName | typeof import("@reduxjs/toolkit/dist/query/react").reactHooksModuleName>;
 export declare const useGetAssetsQuery: <R extends Record<string, any> = import("@reduxjs/toolkit/query").TSHelpersId<(Omit<{
     status: import("@reduxjs/toolkit/query").QueryStatus.uninitialized;
@@ -14,7 +18,7 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
     startedTimeStamp?: undefined | undefined;
     fulfilledTimeStamp?: undefined | undefined;
 } & {
-    currentData?: AssetsResponse | undefined;
+    currentData?: CoinMarketResponse[] | undefined;
     isUninitialized: false;
     isLoading: false;
     isFetching: false;
@@ -23,9 +27,13 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
 }, "isUninitialized"> & {
     isUninitialized: true;
 }) | import("@reduxjs/toolkit/query").TSHelpersOverride<import("@reduxjs/toolkit/query").QuerySubState<import("@reduxjs/toolkit/query").QueryDefinition<{
-    limit?: number;
-}, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>> & {
-    currentData?: AssetsResponse | undefined;
+    vs_currency?: string;
+    order?: string;
+    per_page?: number;
+    page?: number;
+    sparkline?: boolean;
+}, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>> & {
+    currentData?: CoinMarketResponse[] | undefined;
     isUninitialized: false;
     isLoading: false;
     isFetching: false;
@@ -40,9 +48,13 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
     isFetching: true;
     error: undefined;
 } & Required<Pick<import("@reduxjs/toolkit/query").QuerySubState<import("@reduxjs/toolkit/query").QueryDefinition<{
-    limit?: number;
-}, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>> & {
-    currentData?: AssetsResponse | undefined;
+    vs_currency?: string;
+    order?: string;
+    per_page?: number;
+    page?: number;
+    sparkline?: boolean;
+}, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>> & {
+    currentData?: CoinMarketResponse[] | undefined;
     isUninitialized: false;
     isLoading: false;
     isFetching: false;
@@ -53,9 +65,13 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
     isFetching: false;
     error: undefined;
 } & Required<Pick<import("@reduxjs/toolkit/query").QuerySubState<import("@reduxjs/toolkit/query").QueryDefinition<{
-    limit?: number;
-}, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>> & {
-    currentData?: AssetsResponse | undefined;
+    vs_currency?: string;
+    order?: string;
+    per_page?: number;
+    page?: number;
+    sparkline?: boolean;
+}, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>> & {
+    currentData?: CoinMarketResponse[] | undefined;
     isUninitialized: false;
     isLoading: false;
     isFetching: false;
@@ -64,9 +80,13 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
 }, "data" | "fulfilledTimeStamp" | "currentData">>) | ({
     isError: true;
 } & Required<Pick<import("@reduxjs/toolkit/query").QuerySubState<import("@reduxjs/toolkit/query").QueryDefinition<{
-    limit?: number;
-}, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>> & {
-    currentData?: AssetsResponse | undefined;
+    vs_currency?: string;
+    order?: string;
+    per_page?: number;
+    page?: number;
+    sparkline?: boolean;
+}, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>> & {
+    currentData?: CoinMarketResponse[] | undefined;
     isUninitialized: false;
     isLoading: false;
     isFetching: false;
@@ -75,7 +95,11 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
 }, "error">>)>> & {
     status: import("@reduxjs/toolkit/query").QueryStatus;
 }>(arg: {
-    limit?: number;
+    vs_currency?: string;
+    order?: string;
+    per_page?: number;
+    page?: number;
+    sparkline?: boolean;
 } | typeof import("@reduxjs/toolkit/query").skipToken, options?: (import("@reduxjs/toolkit/query").SubscriptionOptions & {
     skip?: boolean;
     refetchOnMountOrArgChange?: boolean | number;
@@ -91,7 +115,7 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
         startedTimeStamp?: undefined | undefined;
         fulfilledTimeStamp?: undefined | undefined;
     } & {
-        currentData?: AssetsResponse | undefined;
+        currentData?: CoinMarketResponse[] | undefined;
         isUninitialized: false;
         isLoading: false;
         isFetching: false;
@@ -100,9 +124,13 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
     }, "isUninitialized"> & {
         isUninitialized: true;
     }) | import("@reduxjs/toolkit/query").TSHelpersOverride<import("@reduxjs/toolkit/query").QuerySubState<import("@reduxjs/toolkit/query").QueryDefinition<{
-        limit?: number;
-    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>> & {
-        currentData?: AssetsResponse | undefined;
+        vs_currency?: string;
+        order?: string;
+        per_page?: number;
+        page?: number;
+        sparkline?: boolean;
+    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>> & {
+        currentData?: CoinMarketResponse[] | undefined;
         isUninitialized: false;
         isLoading: false;
         isFetching: false;
@@ -117,9 +145,13 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
         isFetching: true;
         error: undefined;
     } & Required<Pick<import("@reduxjs/toolkit/query").QuerySubState<import("@reduxjs/toolkit/query").QueryDefinition<{
-        limit?: number;
-    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>> & {
-        currentData?: AssetsResponse | undefined;
+        vs_currency?: string;
+        order?: string;
+        per_page?: number;
+        page?: number;
+        sparkline?: boolean;
+    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>> & {
+        currentData?: CoinMarketResponse[] | undefined;
         isUninitialized: false;
         isLoading: false;
         isFetching: false;
@@ -130,9 +162,13 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
         isFetching: false;
         error: undefined;
     } & Required<Pick<import("@reduxjs/toolkit/query").QuerySubState<import("@reduxjs/toolkit/query").QueryDefinition<{
-        limit?: number;
-    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>> & {
-        currentData?: AssetsResponse | undefined;
+        vs_currency?: string;
+        order?: string;
+        per_page?: number;
+        page?: number;
+        sparkline?: boolean;
+    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>> & {
+        currentData?: CoinMarketResponse[] | undefined;
         isUninitialized: false;
         isLoading: false;
         isFetching: false;
@@ -141,9 +177,13 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
     }, "data" | "fulfilledTimeStamp" | "currentData">>) | ({
         isError: true;
     } & Required<Pick<import("@reduxjs/toolkit/query").QuerySubState<import("@reduxjs/toolkit/query").QueryDefinition<{
-        limit?: number;
-    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>> & {
-        currentData?: AssetsResponse | undefined;
+        vs_currency?: string;
+        order?: string;
+        per_page?: number;
+        page?: number;
+        sparkline?: boolean;
+    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>> & {
+        currentData?: CoinMarketResponse[] | undefined;
         isUninitialized: false;
         isLoading: false;
         isFetching: false;
@@ -154,6 +194,10 @@ export declare const useGetAssetsQuery: <R extends Record<string, any> = import(
     }) => R) | undefined;
 }) | undefined) => [R][R extends any ? 0 : never] & {
     refetch: () => import("@reduxjs/toolkit/query").QueryActionCreatorResult<import("@reduxjs/toolkit/query").QueryDefinition<{
-        limit?: number;
-    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, AssetsResponse, "restAPI", unknown>>;
+        vs_currency?: string;
+        order?: string;
+        per_page?: number;
+        page?: number;
+        sparkline?: boolean;
+    }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, string, CoinMarketResponse[], "restAPI", unknown>>;
 };
