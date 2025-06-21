@@ -1,4 +1,4 @@
-export interface AssetPlatform {
+export interface Asset {
   id: string;
   chain_identifier: number | null;
   name: string;
@@ -17,6 +17,11 @@ export interface Coin {
   symbol: string;
   name: string;
   platforms: Record<string, string>;
+}
+
+export interface AssetsResponse {
+  data: Asset[];
+  timestamp: number;
 }
 
 //possible to make one or more files of types depending of how big will grow this project

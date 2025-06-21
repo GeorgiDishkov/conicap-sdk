@@ -1,13 +1,12 @@
-// src/store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import { coinsApi } from "./coinsApi";
+import { api } from "./api";
 
 export const store = configureStore({
   reducer: {
-    [coinsApi.reducerPath]: coinsApi.reducer,
+    [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(coinsApi.middleware),
+    getDefaultMiddleware().concat(api.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
