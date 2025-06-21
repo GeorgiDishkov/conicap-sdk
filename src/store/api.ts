@@ -4,7 +4,7 @@ import { apiTags } from "../constants/apiTags";
 export const api = createApi({
   reducerPath: "restAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.coincap.io/v2/",
+    baseUrl: "https://api.coingecko.com/api/v3",
   }),
   tagTypes: apiTags,
   endpoints: () => ({}),
